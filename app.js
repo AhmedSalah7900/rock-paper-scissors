@@ -32,9 +32,9 @@ function gameRound(player1, computer) {
   if (result == "Tie!") {
     return "It's a tie game!";
   } else if (result == player1) {
-    return `U win mafaka ${player1} beats ${computer}.`;
+    return `You win! ${player1} beats ${computer}.`;
   } else {
-    return `U lose idiot! ${computer} beats ${player1}.`;
+    return `You lose! ${computer} beats ${player1}.`;
   }
 }
 
