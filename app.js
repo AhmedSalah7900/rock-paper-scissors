@@ -1,12 +1,12 @@
 const options = ["rock", "paper", "scissors"];
 
-// a function to get the computer choice
+// function to get the computer choice
 function getComputerChoice() {
   const choice = options[Math.floor(Math.random() * 3)];
   return choice;
 }
 
-// a function to check if it's a tie, a win, or a lose
+// function to check if it's a tie, a win, or a lose
 function checkWinner(player1, computer) {
   if (
     (player1 == "rock" && computer == "scissors") ||
@@ -25,7 +25,7 @@ function checkWinner(player1, computer) {
   }
 }
 
-// a function to declare the winner
+// function to check the winner
 function gameRound(player1, computer) {
   const result = checkWinner(player1, computer);
   if (result == "Tie!") {
@@ -37,7 +37,7 @@ function gameRound(player1, computer) {
   }
 }
 
-// a function to prompt the player for their choice
+// function to prompt the player for their choice
 function getPlayerChoice() {
   let validInput = false;
   while (validInput == false) {
@@ -53,7 +53,7 @@ function getPlayerChoice() {
   }
 }
 
-// a function to play the game
+// function to play the game
 function game() {
   let playerScore = 0;
   let computerScore = 0;
