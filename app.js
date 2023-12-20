@@ -8,20 +8,16 @@ function getComputerChoice() {
 
 // function to check if it's a tie, a win, or a lose
 function checkWinner(player1, computer) {
-  if (
-    (player1 == "rock" && computer == "scissors") ||
-    (player1 == "scissors" && computer == "paper") ||
-    (player1 == "paper" && computer == "rock")
-  ) {
-    return player1;
+  if (player1 == computer) {
+    return "Tie!";
   } else if (
     (computer == "rock" && player1 == "scissors") ||
     (computer == "scissors" && player1 == "paper") ||
     (computer == "paper" && player1 == "rock")
   ) {
-    return computer;
+    return "Computer";
   } else {
-    return "Tie!";
+    return "Player";
   }
 }
 
@@ -30,7 +26,7 @@ function gameRound(player1, computer) {
   const result = checkWinner(player1, computer);
   if (result == "Tie!") {
     return "It's a tie game!";
-  } else if (result == player1) {
+  } else if (result == "Player") {
     return `You win! ${player1} beats ${computer}.`;
   } else {
     return `You lose! ${computer} beats ${player1}.`;
@@ -64,10 +60,12 @@ function game() {
     console.log("----------");
     if (checkWinner(player1, computer) == "Player") {
       playerScore++;
-    } else {
+    } else if (checkWinner(player1, computer) == "Computer") {
       computerScore++;
     }
   }
+  console.log(playerScore);
+  console.log(computerScore);
   console.log("Game Over!");
   if (playerScore > computerScore) {
     console.log("You Win!");
